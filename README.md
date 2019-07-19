@@ -58,6 +58,8 @@ Isso irá disponibilizar uma api REST rodando no endereço http://localhost:3000
 
 Um produto especifico pode ser acessado através da url http://localhost:3000/products/{id};
 
+ ****
+
 ## O que vamos avaliar
 
 * Automação de tasks com gulp, grunt ou outra ferramenta de sua escolha
