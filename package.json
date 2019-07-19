@@ -1,0 +1,19 @@
+{
+  "name": "teste-mentores",
+  "version": "1.0.0",
+  "description": "Teste de conhecimento em react para Mentores Digital",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+bitbucket.org/mentores/teste-react-js.git"
+  },
+  "author": "Everton Tavares",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/mentores/teste-react-js/issues"
+  },
+  "homepage": "https://bitbucket.org/mentores/teste-react-js#readme"
+}
