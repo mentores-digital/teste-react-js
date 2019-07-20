@@ -1,4 +1,4 @@
-# React Challenge
+# React Test
 
 Este é um desafio para testar seus conhecimentos em JavaScript, React e Redux;
 
