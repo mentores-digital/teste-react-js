@@ -92,4 +92,4 @@ Um produto especifico pode ser acessado através da url http://localhost:3000/pr
 
 ## Como entrego meu teste?
 
-Nos envie um email com o título "Desafio frontend - { seu nome }" contendo o link do seu fork para o email matheus@mentores.com.br
+Ao finalizar o teste, crie um Pull Request para o repositório em questão e envie um e-mail confirmando a conclusão;
