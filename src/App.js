@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import api from './services/api';
+import { formatPrice } from './util/format';
 
 // function App() {
 //   return (
@@ -20,7 +21,13 @@ class App extends Component {
   async componentDidMount() {
     const response = await api.get('/products');
 
-    this.setState({ products: response.data });
+    const data = response.data.map(product => ({
+      ...product,
+      priceFormatted: formatPrice(product.price),
+    }));
+
+    this.setState({ products: data });
+    
   }
 
   render() {
@@ -40,7 +47,7 @@ class App extends Component {
               {product.url}
             </p>
             <img src={product.picture}/>
-
+            <p>{product.priceFormatted}</p>
           </li>
         ))}
       </div>
