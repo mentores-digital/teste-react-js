@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './routes';
-
-// function App() {
-//   return (
-//     <h1>Testando bootstrap</h1>
-//   );
-// }
-
-// export default App;
+import { Provider } from 'react-redux';
+import store from './store';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Provider>
   );
-  }
+}
