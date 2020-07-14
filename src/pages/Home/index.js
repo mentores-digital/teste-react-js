@@ -1,8 +1,11 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
+import * as CartActions from '../../store/modules/cart/actions';
 
-export default class Home extends Component {
+class Home extends Component {
 
     state = {
       products: [],
@@ -19,6 +22,11 @@ export default class Home extends Component {
       this.setState({ products: data });
       
     }
+
+    handleAddProduct = product => {
+      const { addToCart } = this.props;
+      addToCart(product)
+    }
   
     render() {
   
@@ -33,16 +41,17 @@ export default class Home extends Component {
                 <strong>Título: </strong>
                 {product.title}
               </h2>
-              <p>
-                {product.url}
-              </p>
               <img src={product.picture}/>
               <p>{product.priceFormatted}</p>
-            </li>
+              <button type="button" onClick={() => this.handleAddProduct(product)}>Adicionar</button>
+            </li>  
           ))}
         </div>
       );
     };
 };
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(CartActions, dispatch);
   
-  
+export default connect(null, mapDispatchToProps)(Home);
