@@ -32,3 +32,11 @@
         border: none; }
         .list-products .card .card-body button:hover {
           background: #27ae60; }
+
+.cart {
+  margin: 3rem 0; }
+  .cart .quantity {
+    display: flex;
+    flex-flow: row; }
+    .cart .quantity input {
+      width: 50%; }

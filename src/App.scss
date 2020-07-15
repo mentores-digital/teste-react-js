@@ -50,3 +50,16 @@
     }
     
 }
+
+.cart {
+    margin: 3rem 0;
+    
+    .quantity {
+        display: flex;
+        flex-flow: row;
+
+        input {
+            width:50%;
+        }
+    }
+}
