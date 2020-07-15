@@ -1,18 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-function Header(props) {
+export default function Header() {
   
-  const cartSize = props.cart.length;
+  const cartSize = useSelector(state => state.cart.length);
 
   return (
       <div classnames="container">
-        <p>{cartSize} itens</p>
+        <p to="/cart">{cartSize} itens</p>
       </div>
     
   );
 }
-
-export default connect(state => ({
-  cart: state.cart,
-}))(Header);
