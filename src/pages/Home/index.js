@@ -47,10 +47,10 @@ export default function Home (){
           <Row>
           {products.map(product => (
             <Col md="3" sm="12">
-              <Card key={product.id} onClick={() => history.push('/details', product)}>
-                <CardImg top width="100%" src={product.picture} alt={product.title} />
+              <Card key={product.id}>
+                <CardImg top class="img-fluid" src={product.picture} alt={product.title}  onClick={() => history.push('/details', product)} />
                 <CardBody>
-                  <CardTitle> {product.title}</CardTitle>
+                  <CardTitle  onClick={() => history.push('/details', product)}> {product.title}</CardTitle>
                   <CardSubtitle>{product.priceFormatted}</CardSubtitle>
                   <Button onClick={() => handleAddProduct(product.id)}><FaShoppingCart /> Comprar</Button>
                 </CardBody>
