@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
+import history from '../../services/history'
 import * as CartActions from '../../store/modules/cart/actions';
 
 export default function Home (){
@@ -46,6 +47,7 @@ export default function Home (){
               <img src={product.picture}/>
               <p>{product.priceFormatted}</p>
               <button type="button" onClick={() => handleAddProduct(product.id)}>Adicionar</button>
+              <button type="button" onClick={() => history.push('/details', product)}>Detalhes do produto</button>
             </li>  
           ))}
         </div>
