@@ -33,7 +33,7 @@ export default function Cart() {
   return (
     <div class="cart">
       <Container>
-        <Table hover bordered>
+        <Table hover bordered responsive>
           <thead>
             <tr>
               <th>Imagem Produto</th>

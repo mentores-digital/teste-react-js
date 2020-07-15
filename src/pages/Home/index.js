@@ -5,7 +5,7 @@ import api from '../../services/api';
 import history from '../../services/history'
 import * as CartActions from '../../store/modules/cart/actions';
 import {
-  Container, Row, Col, Card, CardImg, CardText, CardBody,
+  Container, Row, Col, Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
 import { FaShoppingCart } from "react-icons/fa";
@@ -52,7 +52,7 @@ export default function Home (){
                 <CardBody>
                   <CardTitle  onClick={() => history.push('/details', product)}> {product.title}</CardTitle>
                   <CardSubtitle>{product.priceFormatted}</CardSubtitle>
-                  <Button onClick={() => handleAddProduct(product.id)}><FaShoppingCart /> Comprar</Button>
+                  <button class="btn btn-buy" onClick={() => handleAddProduct(product.id)}><FaShoppingCart /> Comprar</button>
                 </CardBody>
               </Card>
             </Col>
