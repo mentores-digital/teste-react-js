@@ -4,6 +4,12 @@ import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 import history from '../../services/history'
 import * as CartActions from '../../store/modules/cart/actions';
+import {
+  Container, Row, Col, Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
+} from 'reactstrap';
+import { FaShoppingCart } from "react-icons/fa";
+
 
 export default function Home (){
 
@@ -36,20 +42,23 @@ export default function Home (){
     }
   
     return (
-        <div>
-          <h1>Listar os Produtos</h1>
+      <div classnames="list-products">
+        <Container>
+          <Row>
           {products.map(product => (
-            <li key={product.id}>
-              <h2>
-                <strong>Título: </strong>
-                {product.title}
-              </h2>
-              <img src={product.picture}/>
-              <p>{product.priceFormatted}</p>
-              <button type="button" onClick={() => handleAddProduct(product.id)}>Adicionar</button>
-              <button type="button" onClick={() => history.push('/details', product)}>Detalhes do produto</button>
-            </li>  
-          ))}
-        </div>
+            <Col md="3" sm="12">
+              <Card key={product.id} onClick={() => history.push('/details', product)}>
+                <CardImg top width="100%" src={product.picture} alt={product.title} />
+                <CardBody>
+                  <CardTitle> {product.title}</CardTitle>
+                  <CardSubtitle>{product.priceFormatted}</CardSubtitle>
+                  <Button onClick={() => handleAddProduct(product.id)}><FaShoppingCart /> Comprar</Button>
+                </CardBody>
+              </Card>
+            </Col>
+            ))}
+          </Row>
+        </Container>
+      </div>
       );
     };
