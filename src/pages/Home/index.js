@@ -42,7 +42,7 @@ export default function Home (){
     }
   
     return (
-      <div classnames="list-products">
+      <div class="list-products">
         <Container>
           <Row>
           {products.map(product => (
