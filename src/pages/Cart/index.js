@@ -31,18 +31,16 @@ export default function Cart() {
   }
   return (
     <Container>
-      <Table>
-        <thead>
-          <tr>
-            <th />
+      <Table hover>
+      <thead>
+        <tr>
             <th>Produto</th>
             <th>Qtd</th>
             <th>Subtotal</th>
-            <th />
-          </tr>
-        </thead>
-        <tbody>
-          {cart.map(product => (
+        </tr>
+      </thead>
+      <tbody>
+      {cart.map(product => (
             <tr>
               <td>
                 <img src={product.image} alt={product.title} />
@@ -75,17 +73,10 @@ export default function Cart() {
               </td>
             </tr>
           ))}
-        </tbody>
-      </Table>
-
-      <footer>
-        <button type="button">Finalizar pedido</button>
-
-        
-          <span>Total</span>
-          <strong>{total}</strong>
-        
-      </footer>
+      </tbody>
+    </Table>
+      <span>Total</span>
+      <strong>{total}</strong>
     </Container>
   );
 }
