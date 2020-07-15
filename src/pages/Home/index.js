@@ -48,7 +48,7 @@ export default function Home (){
           {products.map(product => (
             <Col md="3" sm="12">
               <Card key={product.id} onClick={() => history.push('/details', product)}>
-                <CardImg top width="100%" src={product.picture} alt={product.title} />
+                <CardImg top class="img-fluid" src={product.picture} alt={product.title} />
                 <CardBody>
                   <CardTitle> {product.title}</CardTitle>
                   <CardSubtitle>{product.priceFormatted}</CardSubtitle>

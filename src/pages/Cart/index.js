@@ -34,6 +34,7 @@ export default function Cart() {
       <Table hover>
       <thead>
         <tr>
+            <th>Imagem Produto</th>
             <th>Produto</th>
             <th>Qtd</th>
             <th>Subtotal</th>
@@ -43,11 +44,13 @@ export default function Cart() {
       {cart.map(product => (
             <tr>
               <td>
-                <img src={product.image} alt={product.title} />
+                <img class="img-fluid" src={product.picture} alt={product.title} />
               </td>
               <td>
-                <strong>{product.title}</strong>
-                <span>{product.priceFormatted}</span>
+                {product.title}
+              </td>
+              <td>
+                {product.priceFormatted}
               </td>
               <td>
                 <div>
